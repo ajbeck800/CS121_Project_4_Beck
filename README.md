@@ -1,31 +1,66 @@
 # CS121_Project_4_Beck
 ## (lab) OOP horse race
-```
-constant integer NUM_HORSES
-constant integer TRACK_LENGTH
+
+### UML Diagram
+```mermaid
+classDiagram
+    class Race {
+        - int TRACK_LENGTH
+        - int NUM_HORSES
+        - Horse horses[NUM_HORSES]
+        + Race()
+        + void start()
+    }
+
+    class Horse {
+        - int position
+        - int index
+        - int TRACK_LENGTH
+        + Horse()
+        + void init(index, trackLength) 
+        + void advance()
+        + void printLane()
+        + bool isWinner()
+    }
+
+Race o-- Horse
 ```
 
-### main():
+### class race()
 ```
-make an array of 5 0 values, call it horses
-set keepGoing to true
-
-while keepGoing:
-    run through each horse in array:
-        advance that horse
-        print that horse's lane
-        if that horse won:
-            set keepGoing to false
-        ask user for input to start next turn
+in header:
+    set const static int NUM_HORSES = 5;
+    intialize TRACK_LENGTH to 15
+    intialize horse array
+in constructor:
+    go through each horse
+    intialize that horse with id and track length
 ```
 
-### function advance (integer horseNum, array horses):
+### void start()
+```
+initiate Horse instance
+```
+
+### class horse()
+```
+set position, index, trackLength
+
+```
+
+### void init(index, trackLength)
+```
+intialize index
+intialize trackLength
+```
+
+### void advance()
 ```
 random number generator that stores 1 or 0 in coin
 add coin to horse's position value in the array
 ```
 
-### function printLane(integer horseNum, array horses):
+### void printLane()
 ```
 for i from zero to TRACK_LENGTH:
     if current loop index is equal to the horse's value:
@@ -34,11 +69,18 @@ for i from zero to TRACK_LENGTH:
         print .
 ```
 
-### function isWinner(integer horseNum, array horses):
+### bool isWinner()
 ```
 result = false
 if a horse's value is equal to TRACK_LENGTH:
     result = true
     print Horse {horseNum} wins!!!
 return result
+```
+
+### int main()
+```
+seed random number generator
+initiate Race instance
+start race
 ```
