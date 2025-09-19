@@ -39,13 +39,19 @@ in constructor:
 
 ### void start()
 ```
-initiate Horse instance
+set keepGoing to true
+    while keepGoing
+        for each horse:
+            advance that horse
+            print that horse's lane
+            if that horse is finished:
+                announce the winner
+                set keepGoing to false
 ```
 
 ### class horse()
 ```
 set position, index, trackLength
-
 ```
 
 ### void init(index, trackLength)
