@@ -62,7 +62,6 @@ intialize trackLength
 
 ### void advance()
 ```
-random number generator that stores 1 or 0 in coin
 add coin to horse's position value in the array
 ```
 
